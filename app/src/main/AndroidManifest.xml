@@ -26,7 +26,11 @@
             <!--</intent-filter>-->
 
         </activity>
-        <activity android:name=".PersonDetails" />
+        <activity
+            android:name=".PersonDetails"
+            android:parentActivityName=".MediReady"/>
+
+
         <activity android:name=".ActivityTwo"></activity>
         <activity
             android:name=".MediReady"
