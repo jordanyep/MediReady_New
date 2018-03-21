@@ -47,10 +47,10 @@ public class PersonDetails extends AppCompatActivity {
             String age1=dbList.get(position).getAge();
             String gender1=dbList.get(position).getGender();
             String relationship1=dbList.get(position).getRelationship();
-            String medicalID1=dbList.get(position).getRelationship();
-            String allergies1=dbList.get(position).getRelationship();
-            String medication1=dbList.get(position).getRelationship();
-            String conditions1=dbList.get(position).getRelationship();
+            String medicalID1=dbList.get(position).getMedicalID();
+            String allergies1=dbList.get(position).getAllergies();
+            String medication1=dbList.get(position).getMedication();
+            String conditions1=dbList.get(position).getConditions();
 
 
             firstName.setText(firstName1);
@@ -62,6 +62,9 @@ public class PersonDetails extends AppCompatActivity {
             allergies.setText(allergies1);
             medication.setText(medication1);
             conditions.setText(conditions1);
+
+            getSupportActionBar().setTitle("Information for " + lastName1 );
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
         Toast.makeText(PersonDetails.this, dbList.toString(), Toast.LENGTH_LONG);

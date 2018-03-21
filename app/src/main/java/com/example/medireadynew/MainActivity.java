@@ -71,17 +71,17 @@ public class MainActivity extends AppCompatActivity {
         String age2 = age.getText().toString();
         String relat = relationship.getText().toString();
 
-        String medicalID1 = medicalID.getText().toString();
-        String allergies1 = allergies.getText().toString();
-        String medication1 = medication.getText().toString();
-        String conditions1 = conditions.getText().toString();
+        String medicalID2 = medicalID.getText().toString();
+        String allergies2 = allergies.getText().toString();
+        String medication2 = medication.getText().toString();
+        String conditions2 = conditions.getText().toString();
 
-        if (first.equals("") || last.equals("") || gen.equals("") || relat.equals("")|| medicalID1.equals("")|| allergies1.equals("")|| medication1.equals("")|| conditions1.equals("")    ) {
+        if (first.equals("") || last.equals("") || gen.equals("") || relat.equals("")|| medicalID2.equals("")|| allergies2.equals("")|| medication2.equals("")|| conditions2.equals("")    ) {
             Toast.makeText(this, "Not all fields are filled in.", Toast.LENGTH_LONG).show();
         } else {
-            Toast.makeText(this, "" + first + last + gen + age2 + relat, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "" + first +" "+ last + " "+ gen + " "+ age2 + " "+ relat + " "+ medicalID2 + " "+ allergies2 +" "+ medication2 + " "+ conditions2, Toast.LENGTH_SHORT).show();
             helpher = new DatabaseHelper(MainActivity.this);
-            helpher.insertIntoDB(first,last,gen,age2,relat, medicalID1, allergies1, medication1, conditions1);
+            helpher.insertIntoDB(first,last,gen,age2,relat, medicalID2, allergies2, medication2, conditions2);
 
             Intent intent = new Intent(this, MediReady.class);
             startActivity(intent);
