@@ -14,6 +14,7 @@ public class PersonDetails extends AppCompatActivity {
     List<DatabaseModel> dbList;
     int position;
     TextView firstName,lastName,age,gender,relationship;
+    TextView medicalID, allergies, medication, conditions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,11 @@ public class PersonDetails extends AppCompatActivity {
         gender =(TextView)findViewById(R.id.gender);
         relationship =(TextView)findViewById(R.id.relationship);
 
+        medicalID = findViewById(R.id.medicalID);
+        allergies = findViewById(R.id.allergies);
+        medication = findViewById(R.id.medication);
+        conditions = findViewById(R.id.conditions);
+
         helpher = new DatabaseHelper(this);
         dbList= new ArrayList<DatabaseModel>();
         dbList = helpher.getDataFromDB();
@@ -41,12 +47,21 @@ public class PersonDetails extends AppCompatActivity {
             String age1=dbList.get(position).getAge();
             String gender1=dbList.get(position).getGender();
             String relationship1=dbList.get(position).getRelationship();
+            String medicalID1=dbList.get(position).getRelationship();
+            String allergies1=dbList.get(position).getRelationship();
+            String medication1=dbList.get(position).getRelationship();
+            String conditions1=dbList.get(position).getRelationship();
+
 
             firstName.setText(firstName1);
             lastName.setText(lastName1);
             age.setText(age1);
             gender.setText(gender1);
             relationship.setText(relationship1);
+            medicalID.setText(medicalID1);
+            allergies.setText(allergies1);
+            medication.setText(medication1);
+            conditions.setText(conditions1);
         }
 
         Toast.makeText(PersonDetails.this, dbList.toString(), Toast.LENGTH_LONG);

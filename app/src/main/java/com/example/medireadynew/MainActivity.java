@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     private static final int ACTIVITY_START_CAMERA_APP = 1;
 
     EditText firstName,lastName,age,gender,relationship;
+    EditText medicalID, allergies, medication, conditions;
+
     ImageView userPhoto;
     DatabaseHelper helpher;
     List<DatabaseModel> dbList;
@@ -38,6 +40,11 @@ public class MainActivity extends AppCompatActivity {
         gender = findViewById(R.id.gender);
         relationship = findViewById(R.id.relationship);
         userPhoto = (ImageView) findViewById(R.id.imageViewPhoto);
+
+        medicalID = findViewById(R.id.medicalID);
+        allergies = findViewById(R.id.allergies);
+        medication = findViewById(R.id.medication);
+        conditions = findViewById(R.id.conditions);
     }
 
     public void takePhoto(View view) {
@@ -64,12 +71,17 @@ public class MainActivity extends AppCompatActivity {
         String age2 = age.getText().toString();
         String relat = relationship.getText().toString();
 
-        if (first.equals("") || last.equals("") || gen.equals("") || relat.equals("")) {
+        String medicalID1 = medicalID.getText().toString();
+        String allergies1 = allergies.getText().toString();
+        String medication1 = medication.getText().toString();
+        String conditions1 = conditions.getText().toString();
+
+        if (first.equals("") || last.equals("") || gen.equals("") || relat.equals("")|| medicalID1.equals("")|| allergies1.equals("")|| medication1.equals("")|| conditions1.equals("")    ) {
             Toast.makeText(this, "Not all fields are filled in.", Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(this, "" + first + last + gen + age2 + relat, Toast.LENGTH_SHORT).show();
             helpher = new DatabaseHelper(MainActivity.this);
-            helpher.insertIntoDB(first,last,gen,age2,relat);
+            helpher.insertIntoDB(first,last,gen,age2,relat, medicalID1, allergies1, medication1, conditions1);
 
             Intent intent = new Intent(this, MediReady.class);
             startActivity(intent);
@@ -80,5 +92,10 @@ public class MainActivity extends AppCompatActivity {
         gender.setText("");
         age.setText("");
         relationship.setText("");
+
+        medicalID.setText("");
+        allergies.setText("");
+        medication.setText("");
+        conditions.setText("");
     }
 }

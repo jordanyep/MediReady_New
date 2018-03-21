@@ -17,9 +17,9 @@ import java.util.List;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME="student";
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 4;
     private static final String STUDENT_TABLE = "stureg";
-    private static final String STU_TABLE = "create table "+STUDENT_TABLE +"(last TEXT,first TEXT primary key,age TEXT,gender TEXT,relationship TEXT)";
+    private static final String STU_TABLE = "create table "+STUDENT_TABLE +"(last TEXT,first TEXT primary key,age TEXT,gender TEXT,relationship TEXT,medicalID TEXT,allergies TEXT,medication TEXT,conditions TEXT)";
 
     Context context;
 
@@ -45,7 +45,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     /* Insert into database*/
-    public void insertIntoDB(String first,String last,String age,String gender,String relationship){
+    public void insertIntoDB(String first,String last,String age,String gender,String relationship, String medicalID, String allergies, String medication, String conditions){
         Log.d("insert", "before insert");
 
         // 1. get reference to writable DB
@@ -58,6 +58,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put("age", age);
         values.put("gender", gender);
         values.put("relationship", relationship);
+        values.put("medicalID", medicalID);
+        values.put("allergies", allergies);
+        values.put("medication", medication);
+        values.put("conditions", conditions);
 
         // 3. insert
         db.insert(STUDENT_TABLE, null, values);
@@ -96,6 +100,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 model.setAge(cursor.getString(2));
                 model.setGender(cursor.getString(3));
                 model.setRelationship(cursor.getString(4));
+
+                model.setMedicalID(cursor.getString(5));
+                model.setAllergies(cursor.getString(6));
+                model.setMedication(cursor.getString(7));
+                model.setConditions(cursor.getString(8));
 
                 modelList.add(model);
             }while (cursor.moveToNext());

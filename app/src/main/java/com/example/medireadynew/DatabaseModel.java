@@ -6,6 +6,7 @@ package com.example.medireadynew;
 
 public class DatabaseModel {
     private String firstName, lastName, relationship, gender, age;
+    private String medicalID,allergies,medication,conditions;
     private int img; //within drawable
 
     public String getFirstName() {
@@ -45,5 +46,33 @@ public class DatabaseModel {
 
     public int getImg() {
         return img;
+    }
+
+    public String getMedicalID() {
+        return medicalID;
+    }
+    public void setMedicalID(String medicalID) {
+        this.medicalID= medicalID;
+    }
+
+    public String getAllergies() {
+        return allergies;
+    }
+    public void setAllergies(String allergies) {
+        this.allergies= allergies;
+    }
+
+    public String getMedication() {
+        return medication;
+    }
+    public void setMedication(String medication) {
+        this.medication= medication;
+    }
+
+    public String getConditions() {
+        return conditions;
+    }
+    public void setConditions(String conditions) {
+        this.conditions= conditions;
     }
 }
