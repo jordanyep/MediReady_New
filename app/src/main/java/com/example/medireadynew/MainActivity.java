@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
             helpher = new DatabaseHelper(MainActivity.this);
             helpher.insertIntoDB(first,last,gen,age2,relat);
 
-            Intent intent = new Intent(this, ActivityTwo.class);
+            Intent intent = new Intent(this, MediReady.class);
             startActivity(intent);
         }
 
