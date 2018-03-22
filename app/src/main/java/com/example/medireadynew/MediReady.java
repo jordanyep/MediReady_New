@@ -101,7 +101,7 @@ public class MediReady extends AppCompatActivity implements SensorEventListener 
                             //startActivity(new Intent(MediReady.this,MainActivity.class));
                         case R.id.nav_info:
                             selectedFragment = new FragmentDoctor();
-                            startActivity(new Intent(MediReady.this,FamilyDoctor.class));
+                            //startActivity(new Intent(MediReady.this,FamilyDoctor.class));
                             break;
                             //startActivity(new Intent(MediReady.this,FamilyDoctor.class));
                             //startActivity(new Intent(MediReady.this,FamilyDoctor.class));
