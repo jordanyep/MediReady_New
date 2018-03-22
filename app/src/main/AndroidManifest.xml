@@ -19,30 +19,30 @@
             android:name=".MainActivity"
             android:parentActivityName=".MediReady">
 
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
 
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
 
         </activity>
         <activity
             android:name=".PersonDetails"
-            android:parentActivityName=".MediReady"/>
-
-
-        <activity android:name=".ActivityTwo"></activity>
+            android:parentActivityName=".MediReady" />
+        <activity android:name=".ActivityTwo" />
         <activity
             android:name=".MediReady"
             android:label="@string/title_activity_medi_ready"
             android:theme="@style/AppTheme.NoActionBar">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".FamilyDoctor" />
+        <activity android:name=".FamilyDoctorEdit"></activity>
     </application>
 
 </manifest>

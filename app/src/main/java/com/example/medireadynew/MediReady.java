@@ -74,16 +74,18 @@ public class MediReady extends AppCompatActivity {
 //                            selectedFragment = new FragmentHome();
 //                            break;
                             startActivity(new Intent(MediReady.this,MediReady.class));
-                        case R.id.nav_map:
-                            selectedFragment = new FragmentMap();
-                            break;
+                        case R.id.nav_addFam:
+//                            selectedFragment = new FragmentMap();
+//                            break;
+                            startActivity(new Intent(MediReady.this,MainActivity.class));
                         case R.id.nav_info:
-                            selectedFragment = new FragmentDoctor();
-                            break;
+//                            selectedFragment = new FragmentDoctor();
+//                            break;
+                            startActivity(new Intent(MediReady.this,FamilyDoctor.class));
                     }
 
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                            selectedFragment).commit();
+//                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+//                            selectedFragment).commit();
                     return true;
                 }
             };

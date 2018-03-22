@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
             Bundle extras = data.getExtras(); //bundle= a way to collect data
             Bitmap imageBitmap = (Bitmap) extras.get("data");
             userPhoto.setImageBitmap(imageBitmap);
+
         }
     }
 
