@@ -91,12 +91,12 @@ public class MediReady extends AppCompatActivity implements SensorEventListener 
 //                            break;
                             startActivity(new Intent(MediReady.this,MediReady.class));
                         case R.id.nav_addFam:
-                            /*selectedFragment = new FragmentMap();
-                            break;*/
-                            Uri gmmIntentUri = Uri.parse("geo:0,0?q=hospitals");
+                            selectedFragment = new FragmentMap();
+                            break;
+                            /*Uri gmmIntentUri = Uri.parse("geo:0,0?q=hospitals");
                             Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                             mapIntent.setPackage("com.google.android.apps.maps");
-                            startActivity(mapIntent);
+                            startActivity(mapIntent);*/
 
                             //startActivity(new Intent(MediReady.this,MainActivity.class));
                         case R.id.nav_info:
