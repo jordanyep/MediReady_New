@@ -1,7 +1,13 @@
 package com.example.medireadynew;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -13,17 +19,24 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MediReady extends AppCompatActivity {
+public class MediReady extends AppCompatActivity implements SensorEventListener {
     DatabaseHelper helpher;
     List<DatabaseModel> dbList;
     RecyclerView mRecyclerView;
 
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+
+    private SensorManager mSensorManager;
+    private Sensor mProximity;
+    private double currentValue;
+
+    int timer = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +75,9 @@ public class MediReady extends AppCompatActivity {
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
+        mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        mProximity = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
@@ -75,19 +91,66 @@ public class MediReady extends AppCompatActivity {
 //                            break;
                             startActivity(new Intent(MediReady.this,MediReady.class));
                         case R.id.nav_addFam:
-//                            selectedFragment = new FragmentMap();
-//                            break;
-                            startActivity(new Intent(MediReady.this,MainActivity.class));
+                            /*selectedFragment = new FragmentMap();
+                            break;*/
+                            Uri gmmIntentUri = Uri.parse("geo:0,0?q=hospitals");
+                            Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                            mapIntent.setPackage("com.google.android.apps.maps");
+                            startActivity(mapIntent);
+
+                            //startActivity(new Intent(MediReady.this,MainActivity.class));
                         case R.id.nav_info:
-//                            selectedFragment = new FragmentDoctor();
-//                            break;
+                            selectedFragment = new FragmentDoctor();
                             startActivity(new Intent(MediReady.this,FamilyDoctor.class));
+                            break;
+                            //startActivity(new Intent(MediReady.this,FamilyDoctor.class));
+                            //startActivity(new Intent(MediReady.this,FamilyDoctor.class));
                     }
 
-//                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-//                            selectedFragment).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                            selectedFragment).commit();
                     return true;
                 }
             };
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        mSensorManager.registerListener((SensorEventListener) this, mProximity, SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
+    @Override
+    public void onSensorChanged(SensorEvent event) {
+
+
+        if (event.sensor.getType() == Sensor.TYPE_PROXIMITY) {
+            currentValue = event.values[0];
+
+            if (currentValue < 5) {
+                timer++;
+                System.out.println("prox covered " + timer);
+
+                if (timer == 5) {
+                    Toast.makeText(getApplicationContext(), "calling 911", Toast.LENGTH_SHORT).show();
+                    timer = 0;
+                }
+                else {
+                    timer++;
+                }
+            }
+        }
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+    }
+
+    @Override
+    protected void onPause() {
+        // Be sure to unregister the sensor when the activity pauses.
+        super.onPause();
+        mSensorManager.unregisterListener(this);
+    }
 }

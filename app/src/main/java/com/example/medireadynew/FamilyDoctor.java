@@ -30,8 +30,8 @@ public class FamilyDoctor extends AppCompatActivity {
         familyDoctor.setText(doctor);
         phoneDoctor.setText(phone);
 
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
-        bottomNav.setOnNavigationItemSelectedListener(navListener);
+        /*BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
+        bottomNav.setOnNavigationItemSelectedListener(navListener);*/
 
         getSupportActionBar().setTitle("Family Doctor Info");
 
@@ -43,29 +43,21 @@ public class FamilyDoctor extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
+    /*private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     android.support.v4.app.Fragment selectedFragment = null;
                     switch(item.getItemId()) {
                         case R.id.nav_home:
-//                            selectedFragment = new FragmentHome();
-//                            break;
                             startActivity(new Intent(FamilyDoctor.this,MediReady.class));
                         case R.id.nav_addFam:
-//                            selectedFragment = new FragmentMap();
-//                            break;
                             startActivity(new Intent(FamilyDoctor.this,MainActivity.class));
                         case R.id.nav_info:
-//                            selectedFragment = new FragmentDoctor();
-//                            break;
                             startActivity(new Intent(FamilyDoctor.this,FamilyDoctor.class));
                     }
 
-//                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-//                            selectedFragment).commit();
                     return true;
                 }
-            };
+            };*/
 }

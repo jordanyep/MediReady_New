@@ -1,7 +1,12 @@
 package com.example.medireadynew;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,6 +29,12 @@ public class MainActivity extends AppCompatActivity {
     DatabaseHelper helpher;
     List<DatabaseModel> dbList;
 
+    /*private SensorManager mSensorManager;
+    private Sensor mProximity;
+    private double currentValue;
+    float[] values;
+    float distance;*/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +56,10 @@ public class MainActivity extends AppCompatActivity {
         allergies = findViewById(R.id.allergies);
         medication = findViewById(R.id.medication);
         conditions = findViewById(R.id.conditions);
+
+        /*mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        mProximity = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);*/
+
     }
 
     public void takePhoto(View view) {
@@ -99,4 +114,35 @@ public class MainActivity extends AppCompatActivity {
         medication.setText("");
         conditions.setText("");
     }
+
+    /*@Override
+    protected void onResume() {
+        super.onResume();
+
+        mSensorManager.registerListener((SensorEventListener) this, mProximity, SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
+    @Override
+    public void onSensorChanged(SensorEvent event) {
+
+        if (event.sensor.getType() == Sensor.TYPE_PROXIMITY) {
+            currentValue = event.values[0];
+            if (currentValue < 5) {
+                Toast.makeText(getApplicationContext(), "near", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+    }
+
+    @Override
+    protected void onPause() {
+        // Be sure to unregister the sensor when the activity pauses.
+        super.onPause();
+        mSensorManager.unregisterListener(this);
+    }*/
+
 }
