@@ -133,6 +133,9 @@ public class MediReady extends AppCompatActivity implements SensorEventListener 
 
                 if (timer == 5) {
                     Toast.makeText(getApplicationContext(), "calling 911", Toast.LENGTH_SHORT).show();
+                    String phoneNum = "7787826930";
+                    String dial = "tel:" + phoneNum;
+                    startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse(dial)));
                     timer = 0;
                 }
                 else {
