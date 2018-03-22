@@ -37,7 +37,7 @@ public class FragmentMap extends Fragment {
             }
         });
 
-        Button hospitalButton = (Button) v.findViewById(R.id.policeButton);
+        Button hospitalButton = (Button) v.findViewById(R.id.hospitalButton);
         hospitalButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -53,25 +53,4 @@ public class FragmentMap extends Fragment {
     }
 
 
-//    public void searchPolice(View view) {
-//
-//        /*Intent intent = new Intent(getActivity(), FamilyDoctorEdit.class);
-//        //Intent intent = new Intent(this, FamilyDoctorEdit.class);
-//        startActivity(intent);*/
-//        Uri gmmIntentUri = Uri.parse("geo:0,0?q=police station");
-//        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
-//        mapIntent.setPackage("com.google.android.apps.maps");
-//        startActivity(mapIntent);
-//    }
-//
-//    public void searchHospital(View view) {
-//
-//        /*Intent intent = new Intent(getActivity(), FamilyDoctorEdit.class);
-//        //Intent intent = new Intent(this, FamilyDoctorEdit.class);
-//        startActivity(intent);*/
-//        Uri gmmIntentUri = Uri.parse("geo:0,0?q=hospitals");
-//        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
-//        mapIntent.setPackage("com.google.android.apps.maps");
-//        startActivity(mapIntent);
-//    }
 }
