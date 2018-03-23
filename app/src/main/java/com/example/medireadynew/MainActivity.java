@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
     protected void onActivityResult (int requestCode, int resultCode, Intent data) { //data = thumbnail data. good to be used into a database?
         if(requestCode == ACTIVITY_START_CAMERA_APP && resultCode == RESULT_OK) {
-            //Toast.makeText(this, "the cmaera has been triggered and pic taken", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "the cmaera has been triggered and pic taken", Toast.LENGTH_SHORT).show();
             Bundle extras = data.getExtras(); //bundle= a way to collect data
             Bitmap imageBitmap = (Bitmap) extras.get("data");
             userPhoto.setImageBitmap(imageBitmap);
