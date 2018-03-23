@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void takePhoto(View view) {
-        //Toast.makeText(this, "the button is pressed", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "the button is pressed", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(); //use this intent to trigger the camera
         intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(intent, ACTIVITY_START_CAMERA_APP); //return to activity after photo has been taken
