@@ -2,11 +2,14 @@ package com.example.medireadynew;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -55,6 +58,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         holder.gender.setText(dbList.get(position).getGender());
         holder.relationship.setText(dbList.get(position).getRelationship());
 
+        //holder.image.setImageBitmap(bitmap);
+//        Bitmap bitmap = BitmapFactory.decodeByteArray(image2, 0, image2.length);
+//        holder.image2.setImageBitmap(dbList.get(position).getImage());
+
     }
 
     @Override
@@ -65,6 +72,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public TextView first,last, age, gender, relationship;
+        public ImageView image2;
 
         public ViewHolder(View itemLayoutView) {
             super(itemLayoutView);

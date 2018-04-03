@@ -17,9 +17,10 @@ import java.util.List;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME="student";
-    private static final int DATABASE_VERSION = 4;
+    private static final int DATABASE_VERSION = 5;
     private static final String STUDENT_TABLE = "stureg";
-    private static final String STU_TABLE = "create table "+STUDENT_TABLE +"(last TEXT,first TEXT primary key,age TEXT,gender TEXT,relationship TEXT,medicalID TEXT,allergies TEXT,medication TEXT,conditions TEXT)";
+    private static final String STU_TABLE = "create table "+STUDENT_TABLE +"(first TEXT,last TEXT primary key,age TEXT,gender TEXT,relationship TEXT,medicalID TEXT,allergies TEXT,medication TEXT,conditions TEXT)";
+    //private static final String STU_TABLE = "create table "+STUDENT_TABLE +"(last TEXT,first TEXT primary key,age TEXT,gender TEXT,relationship TEXT,medicalID TEXT,allergies TEXT,medication TEXT,conditions TEXT,image IMAGE)";
 
     Context context;
 
@@ -46,6 +47,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     /* Insert into database*/
     public void insertIntoDB(String first,String last,String age,String gender,String relationship, String medicalID, String allergies, String medication, String conditions){
+    //public void insertIntoDB(String first,String last,String age,String gender,String relationship, String medicalID, String allergies, String medication, String conditions, byte[] image){
         Log.d("insert", "before insert");
 
         // 1. get reference to writable DB
@@ -53,8 +55,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // 2. create ContentValues to add key "column"/value
         ContentValues values = new ContentValues();
-        values.put("last", last);
         values.put("first", first);
+        values.put("last", last);
         values.put("age", age);
         values.put("gender", gender);
         values.put("relationship", relationship);
@@ -62,6 +64,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put("allergies", allergies);
         values.put("medication", medication);
         values.put("conditions", conditions);
+
+        //values.put("image", image);
 
         // 3. insert
         db.insert(STUDENT_TABLE, null, values);
@@ -105,6 +109,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 model.setAllergies(cursor.getString(6));
                 model.setMedication(cursor.getString(7));
                 model.setConditions(cursor.getString(8));
+
+                //model.setImage(cursor.getBlob(9));
 
                 modelList.add(model);
             }while (cursor.moveToNext());

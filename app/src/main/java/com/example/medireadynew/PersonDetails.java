@@ -64,7 +64,7 @@ public class PersonDetails extends AppCompatActivity {
             medication.setText(medication1);
             conditions.setText(conditions1);
 
-            getSupportActionBar().setTitle("Information for " + lastName1 );
+            getSupportActionBar().setTitle("Information for " + firstName1 );
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 

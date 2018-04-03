@@ -9,6 +9,10 @@ public class DatabaseModel {
     private String medicalID,allergies,medication,conditions;
     private int img; //within drawable
 
+    //TEST
+    private byte[] image;
+    //
+
     public String getFirstName() {
         return firstName;
     }
@@ -74,5 +78,14 @@ public class DatabaseModel {
     }
     public void setConditions(String conditions) {
         this.conditions= conditions;
+    }
+
+
+    //TEST
+    public byte[] getImage() {
+        return image;
+    }
+    public void setImage(byte[] image) {
+        this.image = image;
     }
 }

@@ -1,5 +1,6 @@
 package com.example.medireadynew;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -8,6 +9,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.provider.MediaStore;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +18,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,6 +31,13 @@ public class MainActivity extends AppCompatActivity {
     ImageView userPhoto;
     DatabaseHelper helpher;
     List<DatabaseModel> dbList;
+
+    final int REQUEST_CAMERA = 999;
+    /*ActivityCompat.requestPermissions(
+                MainActivity.this,
+                new String[]{Manifest.permission.CALL_PHONE},
+                REQUEST_CAMERA
+        );*/
 
     /*private SensorManager mSensorManager;
     private Sensor mProximity;
@@ -64,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void takePhoto(View view) {
         //Toast.makeText(this, "the button is pressed", Toast.LENGTH_SHORT).show();
+
         Intent intent = new Intent(); //use this intent to trigger the camera
         intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(intent, ACTIVITY_START_CAMERA_APP); //return to activity after photo has been taken
@@ -74,8 +85,21 @@ public class MainActivity extends AppCompatActivity {
         if(requestCode == ACTIVITY_START_CAMERA_APP && resultCode == RESULT_OK) {
             //Toast.makeText(this, "the cmaera has been triggered and pic taken", Toast.LENGTH_SHORT).show();
             Bundle extras = data.getExtras(); //bundle= a way to collect data
+
             Bitmap imageBitmap = (Bitmap) extras.get("data");
             userPhoto.setImageBitmap(imageBitmap);
+
+            /*ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+            byte imageInByte[] = stream.toByteArray();*/
+
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            imageBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+            byte[] byteArray = stream.toByteArray();
+            //return byteArray;
+
+
+
 
         }
     }
