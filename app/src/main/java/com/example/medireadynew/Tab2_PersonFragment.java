@@ -47,11 +47,11 @@ public class Tab2_PersonFragment extends Fragment{
         dbList= new ArrayList<DatabaseModel>();
         dbList = helpher.getDataFromDB();
 
-        if(dbList.size()>0){
-            String firstName1= dbList.get(position).getFirstName();
-            String lastName1=dbList.get(position).getLastName();
-            String age1=dbList.get(position).getAge();
-            String gender1=dbList.get(position).getGender();
+        if(dbList.size()>5){
+//            String firstName1= dbList.get(position).getFirstName();
+//            String lastName1=dbList.get(position).getLastName();
+//            String age1=dbList.get(position).getAge();
+//            String gender1=dbList.get(position).getGender();
             String relationship1=dbList.get(position).getRelationship();
             String medicalID1=dbList.get(position).getMedicalID();
             String allergies1=dbList.get(position).getAllergies();
@@ -59,10 +59,10 @@ public class Tab2_PersonFragment extends Fragment{
             String conditions1=dbList.get(position).getConditions();
 
 
-            firstName.setText(firstName1);
-            lastName.setText(lastName1);
-            age.setText(age1);
-            gender.setText(gender1);
+//            firstName.setText(firstName1);
+//            lastName.setText(lastName1);
+//            age.setText(age1);
+//            gender.setText(gender1);
             relationship.setText(relationship1);
             medicalID.setText(medicalID1);
             allergies.setText(allergies1);
