@@ -47,7 +47,7 @@ public class Tab2_PersonFragment extends Fragment{
         dbList= new ArrayList<DatabaseModel>();
         dbList = helpher.getDataFromDB();
 
-        if(dbList.size()>5){
+        if(dbList.size()>0){
 //            String firstName1= dbList.get(position).getFirstName();
 //            String lastName1=dbList.get(position).getLastName();
 //            String age1=dbList.get(position).getAge();
