@@ -1,6 +1,5 @@
 package com.example.medireadynew;
 
-import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.hardware.Sensor;
@@ -25,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MediReady extends AppCompatActivity implements SensorEventListener {
+//public class MediReady extends AppCompatActivity {
     DatabaseHelper helpher;
     List<DatabaseModel> dbList;
     RecyclerView mRecyclerView;
@@ -72,7 +72,7 @@ public class MediReady extends AppCompatActivity implements SensorEventListener 
             }
         });
 
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
+        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation2);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
@@ -87,8 +87,8 @@ public class MediReady extends AppCompatActivity implements SensorEventListener 
                     android.support.v4.app.Fragment selectedFragment = null;
                     switch(item.getItemId()) {
                         case R.id.nav_home:
-//                            selectedFragment = new FragmentHome();
-//                            break;
+                            //selectedFragment = new FragmentHome();
+                            //break;
                             startActivity(new Intent(MediReady.this,MediReady.class));
                         case R.id.nav_addFam:
                             selectedFragment = new FragmentMap();
