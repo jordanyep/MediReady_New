@@ -58,6 +58,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         holder.gender.setText(dbList.get(position).getGender());
         holder.relationship.setText(dbList.get(position).getRelationship());
 
+
         //holder.image.setImageBitmap(bitmap);
 //        Bitmap bitmap = BitmapFactory.decodeByteArray(image2, 0, image2.length);
 //        holder.image2.setImageBitmap(dbList.get(position).getImage());
@@ -81,13 +82,16 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             age = (TextView)itemLayoutView.findViewById(R.id.age);
             gender = (TextView)itemLayoutView.findViewById(R.id.gender);
             relationship = (TextView)itemLayoutView.findViewById(R.id.relationship);
+
+            image2 = (ImageView)itemLayoutView.findViewById(R.id.imageView);
             itemLayoutView.setOnClickListener(this);
 
         }
 
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(context,PersonDetails.class);
+            //Intent intent = new Intent(context,PersonDetails.class);
+            Intent intent = new Intent(context,PersonExpandedFragment.class);
 
             Bundle extras = new Bundle();
             extras.putInt("position",getAdapterPosition());

@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -88,21 +89,27 @@ public class MainActivity extends AppCompatActivity {
 
             Bitmap imageBitmap = (Bitmap) extras.get("data");
             userPhoto.setImageBitmap(imageBitmap);
-
-            /*ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
-            byte imageInByte[] = stream.toByteArray();*/
+//            imageByte(imageBitmap);
 
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+            byte imageInByte[] = stream.toByteArray();
+
+            /*ByteArrayOutputStream stream = new ByteArrayOutputStream();
             imageBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
             byte[] byteArray = stream.toByteArray();
-            //return byteArray;
-
-
-
-
+            //return byteArray;*/
         }
     }
+
+    public static byte[] imageByte(ImageView image) {
+        Bitmap bitmap = ((BitmapDrawable)image.getDrawable()).getBitmap();
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+        byte[] byteArray = stream.toByteArray();
+        return byteArray;
+    }
+
 
     public void finished(View view) {
         String first = firstName.getText().toString();
