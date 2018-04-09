@@ -31,7 +31,7 @@ import java.util.List;
  * Created by jordanyep on 2018-03-20.
  */
 
-public class FragmentHome extends Fragment implements SensorEventListener{
+public class FragmentHome extends Fragment {
     DatabaseHelper helpher;
     List<DatabaseModel> dbList;
     RecyclerView mRecyclerView;
@@ -48,7 +48,7 @@ public class FragmentHome extends Fragment implements SensorEventListener{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_map, container, false);
+        View v = inflater.inflate(R.layout.fragment_home, container, false);
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("MediReady");
         helpher = new DatabaseHelper(getActivity());
         dbList= new ArrayList<DatabaseModel>();
@@ -109,10 +109,10 @@ public class FragmentHome extends Fragment implements SensorEventListener{
     public void onResume() {
         super.onResume();
 
-        mSensorManager.registerListener((SensorEventListener) this, mProximity, SensorManager.SENSOR_DELAY_NORMAL);
+        //mSensorManager.registerListener((SensorEventListener) this, mProximity, SensorManager.SENSOR_DELAY_NORMAL);
     }
 
-    @Override
+    /*@Override
     public void onSensorChanged(SensorEvent event) {
 
 
@@ -140,12 +140,12 @@ public class FragmentHome extends Fragment implements SensorEventListener{
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
 
-    }
+    }*/
 
     @Override
     public void onPause() {
         // Be sure to unregister the sensor when the activity pauses.
         super.onPause();
-        mSensorManager.unregisterListener(this);
+        //mSensorManager.unregisterListener(this);
     }
 }

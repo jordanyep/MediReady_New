@@ -21,13 +21,6 @@
             android:name=".MainActivity"
             android:parentActivityName=".MediReady">
 
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
-
         </activity>
         <activity
             android:name=".PersonDetails"
@@ -37,10 +30,10 @@
             android:name=".MediReady"
             android:label="@string/title_activity_medi_ready"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
         </activity>
         <activity android:name=".FamilyDoctor" />
         <activity android:name=".FamilyDoctorEdit" />
@@ -50,12 +43,13 @@
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name=".TestNewHome">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
-
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
+            android:name=".NewHome"
+            android:label="@string/title_activity_medi_ready"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
