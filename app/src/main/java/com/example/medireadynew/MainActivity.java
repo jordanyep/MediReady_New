@@ -131,7 +131,8 @@ public class MainActivity extends AppCompatActivity {
             helpher.insertIntoDB(first,last,gen,age2,relat, medicalID2, allergies2, medication2, conditions2);
 
             //Intent intent = new Intent(this, MediReady.class);
-            Intent intent = new Intent(this, NewHome.class);
+            //Intent intent = new Intent(this, NewHome.class);
+            Intent intent = new Intent(this, NewHomeTwo.class);
             startActivity(intent);
         }
 

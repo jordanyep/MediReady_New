@@ -17,7 +17,7 @@ public class NewFragmentMap extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v= inflater.inflate(R.layout.new_fragment_map,container, false);
-        //((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Local Emergency Map");
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Local Emergency Map");
 
         Button policeButton = (Button) v.findViewById(R.id.policeButton);
         policeButton.setOnClickListener(new View.OnClickListener()

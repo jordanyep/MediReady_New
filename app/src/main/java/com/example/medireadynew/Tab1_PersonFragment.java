@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,21 +55,15 @@ public class Tab1_PersonFragment extends Fragment{
             String age1=dbList.get(position).getAge();
             String gender1=dbList.get(position).getGender();
             String relationship1=dbList.get(position).getRelationship();
-//            String medicalID1=dbList.get(position).getMedicalID();
-//            String allergies1=dbList.get(position).getAllergies();
-//            String medication1=dbList.get(position).getMedication();
-//            String conditions1=dbList.get(position).getConditions();
-
 
             firstName.setText(firstName1);
             lastName.setText(lastName1);
             age.setText(age1);
             gender.setText(gender1);
             relationship.setText(relationship1);
-//            medicalID.setText(medicalID1);
-//            allergies.setText(allergies1);
-//            medication.setText(medication1);
-//            conditions.setText(conditions1);
+
+            ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Information for " + firstName1);
+
 
 
         }

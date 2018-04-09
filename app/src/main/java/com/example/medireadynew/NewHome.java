@@ -58,14 +58,17 @@ public class NewHome extends AppCompatActivity implements SensorEventListener {
                     switch(item.getItemId()) {
                         case R.id.nav_home:
                             selectedFragment = new NewFragmentHome();
+                            getSupportActionBar().hide();
                             fab2.show();
                             break;
                         case R.id.nav_addFam:
                             selectedFragment = new NewFragmentMap();
+                            getSupportActionBar().show();
                             fab2.hide();
                             break;
                         case R.id.nav_info:
                             selectedFragment = new NewFragmentDoctor();
+                            getSupportActionBar().show();
                             fab2.hide();
                             break;
                     }

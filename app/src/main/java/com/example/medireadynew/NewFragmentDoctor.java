@@ -22,7 +22,7 @@ public class NewFragmentDoctor extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.new_fragment_doctor,container, false);
-        //((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Family Doctor Info");
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Family Doctor Info");
 
         familyDoctor = v.findViewById(R.id.familyDoctor);
         phoneDoctor = v.findViewById(R.id.phoneDoctor);

@@ -35,11 +35,14 @@
             <!-- </intent-filter> -->
         </activity>
         <activity android:name=".FamilyDoctor" />
-        <activity android:name=".FamilyDoctorEdit" />
+        <activity
+            android:name=".FamilyDoctorEdit"
+            android:parentActivityName=".MediReady"/>
         <activity
             android:name=".PersonExpandedFragment"
             android:label="@string/title_activity_person_expanded_fragment"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".MediReady"/>
         <activity
             android:name=".NewHome"
             android:label="@string/title_activity_medi_ready"

@@ -32,7 +32,9 @@ public class FamilyDoctorEdit extends AppCompatActivity {
         Toast.makeText(this, "family doctor info saved", Toast.LENGTH_LONG).show();
         editor.commit();
 
-        Intent intent = new Intent(this,FamilyDoctor.class);
+        //Intent intent = new Intent(this,FamilyDoctor.class);
+        Intent intent = new Intent(this, NewHomeTwo.class);
+        intent.putExtra("NewFragmentDoctor", 0);
         startActivity(intent);
     }
 }
