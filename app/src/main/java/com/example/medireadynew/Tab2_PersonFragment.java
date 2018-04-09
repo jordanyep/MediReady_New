@@ -52,7 +52,7 @@ public class Tab2_PersonFragment extends Fragment{
 //            String lastName1=dbList.get(position).getLastName();
 //            String age1=dbList.get(position).getAge();
 //            String gender1=dbList.get(position).getGender();
-            String relationship1=dbList.get(position).getRelationship();
+//            String relationship1=dbList.get(position).getRelationship();
             String medicalID1=dbList.get(position).getMedicalID();
             String allergies1=dbList.get(position).getAllergies();
             String medication1=dbList.get(position).getMedication();
@@ -63,7 +63,7 @@ public class Tab2_PersonFragment extends Fragment{
 //            lastName.setText(lastName1);
 //            age.setText(age1);
 //            gender.setText(gender1);
-            relationship.setText(relationship1);
+//            relationship.setText(relationship1);
             medicalID.setText(medicalID1);
             allergies.setText(allergies1);
             medication.setText(medication1);

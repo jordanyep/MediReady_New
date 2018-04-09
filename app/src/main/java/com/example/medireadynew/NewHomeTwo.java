@@ -40,8 +40,8 @@ public class NewHomeTwo extends AppCompatActivity implements SensorEventListener
         fab2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Add a person here", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+//                Snackbar.make(view, "Add a person here", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
                 startActivity(new Intent(NewHomeTwo.this,MainActivity.class));
             }
         });

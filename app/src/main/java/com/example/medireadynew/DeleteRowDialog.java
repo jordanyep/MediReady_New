@@ -11,8 +11,8 @@ public class DeleteRowDialog extends AppCompatDialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         //return super.onCreateDialog(savedInstanceState);
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle("Delete Row")
-                .setMessage("Do you want to delete the row?")
+        builder.setTitle("Delete Person")
+                .setMessage("Do you want to delete this person?")
                 .setPositiveButton("delete", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

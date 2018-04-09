@@ -1,6 +1,8 @@
 package com.example.medireadynew;
 
 import android.Manifest;
+import android.app.DatePickerDialog;
+import android.app.DialogFragment;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -14,16 +16,21 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
     private static final int ACTIVITY_START_CAMERA_APP = 1;
 
     EditText firstName,lastName,age,gender,relationship;
@@ -34,17 +41,16 @@ public class MainActivity extends AppCompatActivity {
     List<DatabaseModel> dbList;
 
     final int REQUEST_CAMERA = 999;
-    /*ActivityCompat.requestPermissions(
-                MainActivity.this,
-                new String[]{Manifest.permission.CALL_PHONE},
-                REQUEST_CAMERA
-        );*/
 
-    /*private SensorManager mSensorManager;
-    private Sensor mProximity;
-    private double currentValue;
-    float[] values;
-    float distance;*/
+    AutoCompleteTextView genderAutoComplete;
+    String[] genders = {
+            "male",
+            "female",
+            "x",
+            "non-binary",
+            "transgender"
+    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         firstName = findViewById(R.id.firstName);
         lastName = findViewById(R.id.lastName);
         age = findViewById(R.id.age);
-        gender = findViewById(R.id.gender);
+        //gender = findViewById(R.id.gender);
         relationship = findViewById(R.id.relationship);
         userPhoto = (ImageView) findViewById(R.id.imageViewPhoto);
 
@@ -68,8 +74,20 @@ public class MainActivity extends AppCompatActivity {
         medication = findViewById(R.id.medication);
         conditions = findViewById(R.id.conditions);
 
-        /*mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        mProximity = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);*/
+        genderAutoComplete = (AutoCompleteTextView)findViewById(R.id.genderAutoComplete);
+        ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.select_dialog_item,genders);
+
+        //waits for one character to show hint
+        genderAutoComplete.setThreshold(1);
+        genderAutoComplete.setAdapter(adapter);
+
+        age.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                android.support.v4.app.DialogFragment datePicker = new DatePickerFragment();
+                datePicker.show(getSupportFragmentManager(), "date picker");
+            }
+        });
 
     }
 
@@ -114,7 +132,8 @@ public class MainActivity extends AppCompatActivity {
     public void finished(View view) {
         String first = firstName.getText().toString();
         String last = lastName.getText().toString();
-        String gen = gender.getText().toString();
+        //String gen = gender.getText().toString();
+        String genderAutoComplete1 = genderAutoComplete.getText().toString();
         String age2 = age.getText().toString();
         String relat = relationship.getText().toString();
 
@@ -123,59 +142,53 @@ public class MainActivity extends AppCompatActivity {
         String medication2 = medication.getText().toString();
         String conditions2 = conditions.getText().toString();
 
-        if (first.equals("") || last.equals("") || gen.equals("") || relat.equals("")|| medicalID2.equals("")|| allergies2.equals("")|| medication2.equals("")|| conditions2.equals("")    ) {
+        if (first.equals("") || last.equals("") || genderAutoComplete1.equals("") || relat.equals("")|| medicalID2.equals("")|| allergies2.equals("")|| medication2.equals("")|| conditions2.equals("")    ) {
             Toast.makeText(this, "Not all fields are filled in.", Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(this, "" + first +" "+ last + " "+ gen + " "+ age2 + " "+ relat + " "+ medicalID2 + " "+ allergies2 +" "+ medication2 + " "+ conditions2, Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Toast.makeText(this, "" + first +" "+ last + " "+ genderAutoComplete1 + " "+ age2 + " "+ relat + " "+ medicalID2 + " "+ allergies2 +" "+ medication2 + " "+ conditions2, Toast.LENGTH_SHORT).show();
             helpher = new DatabaseHelper(MainActivity.this);
-            helpher.insertIntoDB(first,last,gen,age2,relat, medicalID2, allergies2, medication2, conditions2);
+            helpher.insertIntoDB(first,last,genderAutoComplete1,age2,relat, medicalID2, allergies2, medication2, conditions2);
 
             //Intent intent = new Intent(this, MediReady.class);
             //Intent intent = new Intent(this, NewHome.class);
             Intent intent = new Intent(this, NewHomeTwo.class);
             startActivity(intent);
+
+            firstName.setText("");
+            lastName.setText("");
+            genderAutoComplete.setText("");
+            age.setText("");
+            relationship.setText("");
+
+            medicalID.setText("");
+            allergies.setText("");
+            medication.setText("");
+            conditions.setText("");
         }
 
-        firstName.setText("");
-        lastName.setText("");
-        gender.setText("");
-        age.setText("");
-        relationship.setText("");
-
-        medicalID.setText("");
-        allergies.setText("");
-        medication.setText("");
-        conditions.setText("");
-    }
-
-    /*@Override
-    protected void onResume() {
-        super.onResume();
-
-        mSensorManager.registerListener((SensorEventListener) this, mProximity, SensorManager.SENSOR_DELAY_NORMAL);
+//        firstName.setText("");
+//        lastName.setText("");
+//        genderAutoComplete.setText("");
+//        age.setText("");
+//        relationship.setText("");
+//
+//        medicalID.setText("");
+//        allergies.setText("");
+//        medication.setText("");
+//        conditions.setText("");
     }
 
     @Override
-    public void onSensorChanged(SensorEvent event) {
+    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.YEAR, year);
+        c.set(Calendar.MONTH, month);
+        c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+        String currentDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(c.getTime());
 
-        if (event.sensor.getType() == Sensor.TYPE_PROXIMITY) {
-            currentValue = event.values[0];
-            if (currentValue < 5) {
-                Toast.makeText(getApplicationContext(), "near", Toast.LENGTH_SHORT).show();
-            }
-        }
+        EditText age = (EditText) findViewById(R.id.age);
+        age.setText(currentDateString);
     }
-
-    @Override
-    public void onAccuracyChanged(Sensor sensor, int accuracy) {
-
-    }
-
-    @Override
-    protected void onPause() {
-        // Be sure to unregister the sensor when the activity pauses.
-        super.onPause();
-        mSensorManager.unregisterListener(this);
-    }*/
 
 }
