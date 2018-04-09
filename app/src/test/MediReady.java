@@ -80,38 +80,38 @@ public class MediReady extends AppCompatActivity implements SensorEventListener 
 
     }
 
-    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
-            new BottomNavigationView.OnNavigationItemSelectedListener() {
-                @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                    android.support.v4.app.Fragment selectedFragment = null;
-                    switch(item.getItemId()) {
-                        case R.id.nav_home:
-                            //selectedFragment = new FragmentHome();
-                            //break;
-                            startActivity(new Intent(MediReady.this,MediReady.class));
-                        case R.id.nav_addFam:
-                            selectedFragment = new FragmentMap();
-                            break;
-                            /*Uri gmmIntentUri = Uri.parse("geo:0,0?q=hospitals");
-                            Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
-                            mapIntent.setPackage("com.google.android.apps.maps");
-                            startActivity(mapIntent);*/
-
-                            //startActivity(new Intent(MediReady.this,MainActivity.class));
-                        case R.id.nav_info:
-                            selectedFragment = new FragmentDoctor();
-                            //startActivity(new Intent(MediReady.this,FamilyDoctor.class));
-                            break;
-                            //startActivity(new Intent(MediReady.this,FamilyDoctor.class));
-                            //startActivity(new Intent(MediReady.this,FamilyDoctor.class));
-                    }
-
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                            selectedFragment).commit();
-                    return true;
-                }
-            };
+//    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
+//            new BottomNavigationView.OnNavigationItemSelectedListener() {
+//                @Override
+//                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//                    android.support.v4.app.Fragment selectedFragment = null;
+//                    switch(item.getItemId()) {
+//                        case R.id.nav_home:
+//                            //selectedFragment = new FragmentHome();
+//                            //break;
+//                            startActivity(new Intent(MediReady.this,MediReady.class));
+//                        case R.id.nav_addFam:
+//                            selectedFragment = new FragmentMap();
+//                            break;
+//                            /*Uri gmmIntentUri = Uri.parse("geo:0,0?q=hospitals");
+//                            Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+//                            mapIntent.setPackage("com.google.android.apps.maps");
+//                            startActivity(mapIntent);*/
+//
+//                            //startActivity(new Intent(MediReady.this,MainActivity.class));
+//                        case R.id.nav_info:
+//                            selectedFragment = new FragmentDoctor();
+//                            //startActivity(new Intent(MediReady.this,FamilyDoctor.class));
+//                            break;
+//                            //startActivity(new Intent(MediReady.this,FamilyDoctor.class));
+//                            //startActivity(new Intent(MediReady.this,FamilyDoctor.class));
+//                    }
+//
+//                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+//                            selectedFragment).commit();
+//                    return true;
+//                }
+//            };
 
     @Override
     protected void onResume() {

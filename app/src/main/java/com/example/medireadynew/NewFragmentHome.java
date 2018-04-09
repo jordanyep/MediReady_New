@@ -17,7 +17,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NewFragmentHome extends Fragment {
+public class NewFragmentHome extends Fragment  {
     DatabaseHelper helpher;
     List<DatabaseModel> dbList;
     RecyclerView mRecyclerView;
