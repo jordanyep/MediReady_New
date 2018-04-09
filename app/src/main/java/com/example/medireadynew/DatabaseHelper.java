@@ -16,11 +16,11 @@ import java.util.List;
  */
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-    private static final String DATABASE_NAME="student";
-    private static final int DATABASE_VERSION = 5;
-    private static final String STUDENT_TABLE = "stureg";
-    private static final String STU_TABLE = "create table "+STUDENT_TABLE +"(first TEXT,last TEXT primary key,age TEXT,gender TEXT,relationship TEXT,medicalID TEXT,allergies TEXT,medication TEXT,conditions TEXT)";
-    //private static final String STU_TABLE = "create table "+STUDENT_TABLE +"(last TEXT,first TEXT primary key,age TEXT,gender TEXT,relationship TEXT,medicalID TEXT,allergies TEXT,medication TEXT,conditions TEXT,image IMAGE)";
+    private static final String DATABASE_NAME="family";
+    private static final int DATABASE_VERSION = 6;
+    private static final String FAMILY_TABLE = "famreg";
+    private static final String FAM_TABLE = "create table "+FAMILY_TABLE +"(first TEXT,last TEXT primary key,age TEXT,gender TEXT,relationship TEXT,medicalID TEXT,allergies TEXT,medication TEXT,conditions TEXT)";
+    //private static final String FAM_TABLE = "create table "+FAMILY_TABLE +"(last TEXT,first TEXT primary key,age TEXT,gender TEXT,relationship TEXT,medicalID TEXT,allergies TEXT,medication TEXT,conditions TEXT,image IMAGE)";
 
     Context context;
 
@@ -32,14 +32,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        db.execSQL(STU_TABLE);
+        db.execSQL(FAM_TABLE);
     }
 
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
-        db.execSQL("DROP TABLE IF EXISTS " + STUDENT_TABLE);
+        db.execSQL("DROP TABLE IF EXISTS " + FAMILY_TABLE);
 
         // Create tables again
         onCreate(db);
@@ -68,7 +68,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //values.put("image", image);
 
         // 3. insert
-        db.insert(STUDENT_TABLE, null, values);
+        db.insert(FAMILY_TABLE, null, values);
 
         // 4. close
         db.close();
@@ -78,7 +78,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     /* Retrive  data from database */
     public List<DatabaseModel> getDataFromDB(){
         List<DatabaseModel> modelList = new ArrayList<DatabaseModel>();
-        String query = "select * from "+STUDENT_TABLE;
+        String query = "select * from "+FAMILY_TABLE;
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(query,null);
@@ -118,7 +118,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
 
-        Log.d("student data", modelList.toString());
+        Log.d("family data", modelList.toString());
 
 
         return modelList;
@@ -127,9 +127,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     /*delete a row from database*/
 
-    public void deleteARow(String email){
+    public void deleteARow(String last){
         SQLiteDatabase db= this.getWritableDatabase();
-        db.delete(STUDENT_TABLE, "email" + " = ?", new String[] { email });
+        db.delete(FAMILY_TABLE, "last" + " = ?", new String[] { last });
         db.close();
     }
 

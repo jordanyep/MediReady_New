@@ -122,4 +122,9 @@ public class NewHome extends AppCompatActivity implements SensorEventListener {
         super.onPause();
         mSensorManager.unregisterListener(this);
     }
+
+    public void openDialog() {
+        DeleteRowDialog deleteRowDialog = new DeleteRowDialog();
+        deleteRowDialog.show(getSupportFragmentManager(), "example");
+    }
 }

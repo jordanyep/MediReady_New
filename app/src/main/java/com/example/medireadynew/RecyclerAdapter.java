@@ -1,10 +1,13 @@
 package com.example.medireadynew;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -70,7 +73,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         return dbList.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
 
         public TextView first,last, age, gender, relationship;
         public ImageView image2;
@@ -85,6 +88,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
             image2 = (ImageView)itemLayoutView.findViewById(R.id.imageView);
             itemLayoutView.setOnClickListener(this);
+            itemLayoutView.setOnLongClickListener(this);
 
         }
 
@@ -103,6 +107,32 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             context.startActivity(intent);
             Toast.makeText(RecyclerAdapter.context, "you have clicked Row " + getAdapterPosition(), Toast.LENGTH_LONG).show();
         }
+
+
+        @Override
+        public boolean onLongClick(View v) {
+            Toast.makeText(RecyclerAdapter.context,
+                    "long press detected", Toast.LENGTH_SHORT).show();
+            openDialog();
+            return false;
+        }
+
+        public void openDialog() {
+            FragmentManager manager = ((AppCompatActivity)context).getSupportFragmentManager();
+            final DeleteRowDialog deleteRowDialog = new DeleteRowDialog();
+            deleteRowDialog.show(manager, "example");
+        }
+
     }
 }
 
+/*
+mRecyclerView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Toast.makeText(getActivity().getApplicationContext(),
+                        "You have pressed it long :)", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        });
+ */
