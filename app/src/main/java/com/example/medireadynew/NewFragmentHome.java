@@ -25,9 +25,8 @@ public class NewFragmentHome extends Fragment  {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
-    private SensorManager mSensorManager;
-    private Sensor mProximity;
-    private double currentValue;
+
+
 
     int timer = 0;
 
@@ -35,6 +34,7 @@ public class NewFragmentHome extends Fragment  {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.new_fragment_home,container, false);
+
 
         helpher = new DatabaseHelper(getActivity());
         dbList= new ArrayList<DatabaseModel>();

@@ -17,7 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-public class NewHome extends AppCompatActivity implements SensorEventListener {
+public class NewHomeTwo extends AppCompatActivity implements SensorEventListener {
     FloatingActionButton fab2;
     private SensorManager mSensorManager;
     private Sensor mProximity;
@@ -28,7 +28,7 @@ public class NewHome extends AppCompatActivity implements SensorEventListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_home);
+        setContentView(R.layout.activity_new_home_two);
 
         BottomNavigationView bottomNav2 = findViewById(R.id.bottom_navigation2);
         bottomNav2.setOnNavigationItemSelectedListener(navListener2);
@@ -42,7 +42,7 @@ public class NewHome extends AppCompatActivity implements SensorEventListener {
             public void onClick(View view) {
                 Snackbar.make(view, "Add a person here", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-                startActivity(new Intent(NewHome.this,MainActivity.class));
+                startActivity(new Intent(NewHomeTwo.this,MainActivity.class));
             }
         });
 
@@ -120,3 +120,4 @@ public class NewHome extends AppCompatActivity implements SensorEventListener {
         mSensorManager.unregisterListener(this);
     }
 }
+

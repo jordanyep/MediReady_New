@@ -5,19 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context=".NewHome">
+    tools:context=".NewHomeTwo">
 
-    <!--<TextView-->
-        <!--android:id="@+id/title"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="MediReady"-->
-        <!--android:layout_marginLeft="16dp"-->
-        <!--android:layout_marginTop="8dp"-->
-        <!--android:textSize="30sp"-->
-        <!--android:textStyle="bold" />-->
-
-    <!--android:layout_below="@id/title"-->
     <FrameLayout
         android:id="@+id/fragment_container2"
         android:layout_width="match_parent"
@@ -33,7 +22,7 @@
             android:layout_gravity="bottom|right"
             android:layout_margin="@dimen/fab_margin"
             app:srcCompat="@drawable/ic_add_black_24dp"
-        />
+            />
     </FrameLayout>
 
     <android.support.design.widget.BottomNavigationView
@@ -45,9 +34,3 @@
         app:menu="@menu/bottom_nav" />
 
 </RelativeLayout>
-
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_gravity="bottom|right"-->
-    <!--android:layout_margin="@dimen/fab_margin"-->
-    <!--app:srcCompat="@drawable/ic_add_black_24dp"-->
