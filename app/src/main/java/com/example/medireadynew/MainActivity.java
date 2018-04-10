@@ -47,11 +47,11 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
 
     AutoCompleteTextView genderAutoComplete;
     String[] genders = {
-            "male",
-            "female",
-            "x",
-            "non-binary",
-            "transgender"
+            "Male",
+            "Female",
+            "X",
+            "Non-binary",
+            "Transgender"
     };
 
 

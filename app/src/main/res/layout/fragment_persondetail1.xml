@@ -134,6 +134,7 @@
                 android:layout_marginRight="4dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
+                android:fontFamily="@font/josefin_sans_bold"
                 android:text="First Name"
                 android:textAlignment="textEnd"
                 android:textColor="#3d405b"
@@ -149,6 +150,7 @@
                 android:layout_marginLeft="4dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
+                android:fontFamily="@font/josefin_sans_bold"
                 android:text="Last Name"
                 android:textColor="#3d405b"
                 android:textSize="30sp"
@@ -174,8 +176,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/josefin_sans_bold"
                 android:text="GENDER:"
                 android:textColor="#e07a5f"
+                android:textSize="12sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -183,8 +187,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
+                android:fontFamily="@font/josefin_sans"
                 android:text="Age"
-                android:textSize="24sp" />
+                android:textSize="28sp" />
 
             <TextView
                 android:id="@+id/dob"
@@ -192,8 +197,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="24dp"
+                android:fontFamily="@font/josefin_sans_bold"
                 android:text="DATE OF BIRTH:"
                 android:textColor="#e07a5f"
+                android:textSize="12sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -201,8 +208,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
+                android:fontFamily="@font/josefin_sans"
                 android:text="Gender"
-                android:textSize="24sp" />
+                android:textSize="28sp" />
 
             <TextView
                 android:id="@+id/famrelat"
@@ -210,8 +218,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="24dp"
+                android:fontFamily="@font/josefin_sans_bold"
                 android:text="FAMILY RELATIONSHIP:"
                 android:textColor="#e07a5f"
+                android:textSize="12sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -219,8 +229,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
+                android:fontFamily="@font/josefin_sans"
                 android:text="Relationship"
-                android:textSize="24sp" />
+                android:textSize="28sp" />
 
         </LinearLayout>
     </ScrollView>

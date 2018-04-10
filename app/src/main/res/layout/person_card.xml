@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:card_view="http://schemas.android.com/apk/res-auto">
@@ -10,8 +11,11 @@
         android:layout_margin="8dp"
 
         android:orientation="horizontal"
+        card_view:cardBackgroundColor="#81b29a"
         card_view:cardCornerRadius="5dp"
-        card_view:cardUseCompatPadding="true">
+        card_view:cardUseCompatPadding="true"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -22,7 +26,7 @@
                 android:id="@+id/imageView"
                 android:layout_width="120dp"
                 android:layout_height="90dp"
-                android:background="#bcbcbc"
+                android:background="#f4f1de"
                 android:padding="4dp" />
 
             <TextView
@@ -31,8 +35,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:layout_toRightOf="@id/imageView"
+                android:fontFamily="@font/josefin_sans_bold"
                 android:text="First"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:textSize="28sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -41,8 +47,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_toRightOf="@id/firstName"
+                android:fontFamily="@font/josefin_sans_bold"
                 android:text="Last"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:textSize="28sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -50,11 +58,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/firstName"
-                android:layout_toRightOf="@id/imageView"
+                android:layout_centerVertical="true"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="2dp"
-                android:layout_centerVertical="true"
-                android:text="AGE" />
+                android:layout_toRightOf="@id/imageView"
+                android:fontFamily="@font/josefin_sans"
+                android:text="AGE"
+                android:textColor="#3d405b"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/textView9"
@@ -65,7 +76,10 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="2dp"
                 android:layout_toRightOf="@id/age"
+                android:fontFamily="@font/josefin_sans"
                 android:text="/"
+                android:textColor="#3d405b"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -73,11 +87,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/firstName"
-                android:layout_toRightOf="@id/textView9"
+                android:layout_centerVertical="true"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="2dp"
-                android:layout_centerVertical="true"
-                android:text="GENDER" />
+                android:layout_toRightOf="@id/textView9"
+                android:fontFamily="@font/josefin_sans"
+                android:text="GENDER"
+                android:textColor="#3d405b"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/relationship"
@@ -88,7 +105,9 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="15dp"
                 android:layout_toRightOf="@id/imageView"
+                android:fontFamily="@font/josefin_sans_semibold"
                 android:text="RELATIONSHIP"
+                android:textSize="16sp"
                 android:textStyle="bold|italic" />
 
         </RelativeLayout>
