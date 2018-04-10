@@ -27,6 +27,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     static List<DatabaseModel> dbList;
     static Context context;
+
+
+    DatabaseHelper helper;
+
     RecyclerAdapter(Context context, List<DatabaseModel> dbList ){
         this.dbList = new ArrayList<DatabaseModel>();
         this.context = context;
@@ -43,6 +47,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         // create ViewHolder
 
         ViewHolder viewHolder = new ViewHolder(itemLayoutView);
+
         return viewHolder;
     }
 
@@ -78,6 +83,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         public TextView first,last, age, gender, relationship;
         public ImageView image2;
 
+
         public ViewHolder(View itemLayoutView) {
             super(itemLayoutView);
             first = (TextView) itemLayoutView.findViewById(R.id.firstName);
@@ -89,6 +95,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             image2 = (ImageView)itemLayoutView.findViewById(R.id.imageView);
             itemLayoutView.setOnClickListener(this);
             itemLayoutView.setOnLongClickListener(this);
+
+
+
+
 
         }
 
@@ -111,6 +121,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             Toast.makeText(RecyclerAdapter.context,
                     "long press detected", Toast.LENGTH_SHORT).show();
             openDialog();
+
             return false;
         }
 

@@ -126,12 +126,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    /*delete a row from database*/
 
-    public void deleteARow(String last){
-        SQLiteDatabase db= this.getWritableDatabase();
-        db.delete(FAMILY_TABLE, "last" + " = ?", new String[] { last });
-        db.close();
-    }
 
 }
