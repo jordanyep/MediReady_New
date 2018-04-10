@@ -12,6 +12,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.provider.MediaStore;
+import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -35,6 +36,8 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
 
     EditText firstName,lastName,age,gender,relationship;
     EditText medicalID, allergies, medication, conditions;
+
+    TextInputLayout text_input_first,text_input_last,text_input_gender,text_input_age,text_input_relationship,text_input_medicalID,text_input_allergies,text_input_medication,text_input_conditions;
 
     ImageView userPhoto;
     DatabaseHelper helpher;
@@ -88,6 +91,17 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
                 datePicker.show(getSupportFragmentManager(), "date picker");
             }
         });
+
+
+        text_input_first = findViewById(R.id.text_input_first);
+        text_input_last = findViewById(R.id.text_input_last);
+        text_input_gender = findViewById(R.id.text_input_gender);
+        text_input_age = findViewById(R.id.text_input_age);
+        text_input_relationship = findViewById(R.id.text_input_relationship);
+        text_input_medicalID = findViewById(R.id.text_input_medicalID);
+        text_input_allergies = findViewById(R.id.text_input_allergies);
+        text_input_medication = findViewById(R.id.text_input_medication);
+        text_input_conditions = findViewById(R.id.text_input_conditions);
 
     }
 
@@ -167,16 +181,6 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
             conditions.setText("");
         }
 
-//        firstName.setText("");
-//        lastName.setText("");
-//        genderAutoComplete.setText("");
-//        age.setText("");
-//        relationship.setText("");
-//
-//        medicalID.setText("");
-//        allergies.setText("");
-//        medication.setText("");
-//        conditions.setText("");
     }
 
     @Override

@@ -43,102 +43,128 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
                 android:text="Please enter your primary information:"
                 android:textSize="13sp"
                 android:textStyle="bold"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:layout_editor_absoluteX="16dp" />
 
-            <EditText
-                android:id="@+id/firstName"
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/text_input_first"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="0dp"
-                android:ems="10"
-                android:hint="First Name"
-                android:inputType="textPersonName|textCapSentences|textMultiLine"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lastName" />
+                >
 
-            <EditText
-                android:id="@+id/lastName"
+                <EditText
+                    android:id="@+id/firstName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="0dp"
+                    android:ems="10"
+                    android:hint="First Name"
+                    android:inputType="textPersonName|textCapSentences|textMultiLine"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lastName" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/text_input_last"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="0dp"
-                android:ems="10"
-                android:hint="Last Name"
-                android:inputType="textPersonName|textCapSentences|textMultiLine"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView" />
+                >
+                <EditText
+                    android:id="@+id/lastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="0dp"
+                    android:ems="10"
+                    android:hint="Last Name"
+                    android:inputType="textPersonName|textCapSentences|textMultiLine"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+            </android.support.design.widget.TextInputLayout>
 
-            <!--<EditText-->
-                <!--android:id="@+id/gender"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginStart="16dp"-->
-                <!--android:layout_marginTop="0dp"-->
-                <!--android:ems="10"-->
-                <!--android:hint="Please input your gender"-->
-                <!--android:inputType="textPersonName|textCapSentences|textMultiLine"-->
-                <!--android:textSize="16sp"-->
-                <!--app:layout_constraintStart_toStartOf="parent"-->
-                <!--app:layout_constraintTop_toBottomOf="@+id/age" />-->
-
-            <AutoCompleteTextView
-                android:id="@+id/genderAutoComplete"
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/text_input_gender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="0dp"
-                android:ems="10"
-                android:hint="Please input your gender"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/age" />
+                >
 
-            <EditText
-                android:id="@+id/age"
+                <AutoCompleteTextView
+                    android:id="@+id/genderAutoComplete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="0dp"
+                    android:ems="10"
+                    android:hint="Please input your gender"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/age" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/text_input_age"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="0dp"
-                android:ems="10"
-                android:hint="Date of Birth (double tap)"
-                android:inputType="date"
-                android:textSize="16sp"
-                android:focusableInTouchMode="true"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/firstName" />
+                >
+                <EditText
+                    android:id="@+id/age"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="0dp"
+                    android:ems="10"
+                    android:hint="Date of Birth (double tap)"
+                    android:inputType="date"
+                    android:textSize="16sp"
+                    android:focusableInTouchMode="true"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/firstName" />
+            </android.support.design.widget.TextInputLayout>
 
-            <EditText
-                android:id="@+id/relationship"
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/text_input_relationship"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="0dp"
-                android:ems="10"
-                android:hint="Family Relationship (ex: mother, son, daughter)"
-                android:inputType="textPersonName"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/age" />
+                >
+                <EditText
+                    android:id="@+id/relationship"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="0dp"
+                    android:ems="10"
+                    android:hint="Family Relationship (ex: mother, son, daughter)"
+                    android:inputType="textPersonName"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/age" />
+            </android.support.design.widget.TextInputLayout>
 
-            <EditText
-                android:id="@+id/medicalID"
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/text_input_medicalID"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="0dp"
-                android:ems="10"
-                android:hint="Medical ID Number (ex: care card number)"
-                android:inputType="textPersonName"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/age" />
+                >
+                <EditText
+                    android:id="@+id/medicalID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="0dp"
+                    android:ems="10"
+                    android:hint="Medical ID Number (ex: care card number)"
+                    android:inputType="textPersonName"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/age" />
+            </android.support.design.widget.TextInputLayout>
 
             <TextView
                 android:id="@+id/textView2"
@@ -150,45 +176,63 @@
                 android:textSize="13sp"
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/allergies"
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/text_input_allergies"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="0dp"
-                android:ems="10"
-                android:hint="Please input your allergies"
-                android:inputType="textPersonName|textCapSentences|textMultiLine"
-                android:singleLine="false"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/age" />
+                >
+                <EditText
+                    android:id="@+id/allergies"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="0dp"
+                    android:ems="10"
+                    android:hint="Please input your allergies"
+                    android:inputType="textPersonName|textCapSentences|textMultiLine"
+                    android:singleLine="false"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/age" />
+            </android.support.design.widget.TextInputLayout>
 
-            <EditText
-                android:id="@+id/medication"
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/text_input_medication"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="0dp"
-                android:ems="10"
-                android:hint="Please input your current medications"
-                android:inputType="textPersonName|textCapSentences|textMultiLine"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/age" />
+                >
+                <EditText
+                    android:id="@+id/medication"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="0dp"
+                    android:ems="10"
+                    android:hint="Please input your current medications"
+                    android:inputType="textPersonName|textCapSentences|textMultiLine"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/age" />
+            </android.support.design.widget.TextInputLayout>
 
-            <EditText
-                android:id="@+id/conditions"
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/text_input_conditions"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="0dp"
-                android:ems="10"
-                android:hint="Please input your medical conditions"
-                android:inputType="textPersonName|textCapSentences|textMultiLine"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/age" />
+                >
+                <EditText
+                    android:id="@+id/conditions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="0dp"
+                    android:ems="10"
+                    android:hint="Please input your medical conditions"
+                    android:inputType="textPersonName|textCapSentences|textMultiLine"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/age" />
+            </android.support.design.widget.TextInputLayout>
 
             <Button
                 android:id="@+id/finished"
