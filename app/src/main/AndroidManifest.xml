@@ -19,7 +19,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:parentActivityName=".MediReady"></activity>
+            android:parentActivityName=".MediReady" />
         <activity
             android:name=".PersonDetails"
             android:parentActivityName=".MediReady" />
@@ -37,26 +37,39 @@
         <activity android:name=".FamilyDoctor" />
         <activity
             android:name=".FamilyDoctorEdit"
-            android:parentActivityName=".MediReady"/>
+            android:parentActivityName=".MediReady" />
         <activity
             android:name=".PersonExpandedFragment"
             android:label="@string/title_activity_person_expanded_fragment"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName=".MediReady"/>
+            android:parentActivityName=".MediReady"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".NewHome"
             android:label="@string/title_activity_medi_ready"
             android:theme="@style/AppTheme.NoActionBar">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity android:name=".NewHomeTwo">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <activity
+            android:name=".SplashScreen">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
         </activity>
     </application>
 

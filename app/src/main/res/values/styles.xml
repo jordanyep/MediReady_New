@@ -6,6 +6,8 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -17,4 +19,17 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="MediReady" parent="AppTheme" >
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="NewTheme2" parent="android:Theme" >
+        <item name="android:colorPrimary">@color/legacy_primary</item>
+        <item name="android:colorPrimaryDark">@color/legacy_primary_dark</item>
+    </style>
+
 </resources>
+
+<!--<item name="colorPrimary">@color/colorPrimary</item>-->
+<!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+<!--<item name="colorAccent">@color/colorAccent</item>-->

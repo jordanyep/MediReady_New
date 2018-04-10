@@ -101,11 +101,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             extras.putInt("position",getAdapterPosition());
             intent.putExtras(extras);
 
-            /*
-            int i=getAdapterPosition();
-            intent.putExtra("position", getAdapterPosition());*/
             context.startActivity(intent);
-            Toast.makeText(RecyclerAdapter.context, "you have clicked Row " + getAdapterPosition(), Toast.LENGTH_LONG).show();
+            //Toast.makeText(RecyclerAdapter.context, "you have clicked Row " + getAdapterPosition(), Toast.LENGTH_LONG).show();
         }
 
 

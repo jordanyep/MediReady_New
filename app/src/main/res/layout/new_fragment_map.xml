@@ -38,23 +38,27 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
+            android:background="#e07a5f"
             android:drawableTop="@drawable/ic_local_hospital_black_24dp"
             android:onClick="searchHospital"
             android:text="Hospital"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/policeButton"
-            android:drawableTop="@drawable/ic_security_black_24dp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
+            android:background="#81b29a"
+            android:drawableTop="@drawable/ic_security_black_24dp"
             android:onClick="searchPolice"
             android:text="Police"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/hospitalButton" />

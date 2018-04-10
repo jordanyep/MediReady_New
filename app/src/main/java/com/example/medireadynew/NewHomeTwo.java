@@ -7,6 +7,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.net.Uri;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
@@ -24,6 +25,8 @@ public class NewHomeTwo extends AppCompatActivity implements SensorEventListener
     private double currentValue;
 
     int timer = 0;
+
+    private static int SPLASH_TIMEOUT = 5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +51,26 @@ public class NewHomeTwo extends AppCompatActivity implements SensorEventListener
 
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         mProximity = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                Intent splashScreenIntent = new Intent (NewHomeTwo.this, SplashScreen.class);
+//                startActivity(splashScreenIntent);
+//                finish();
+//            }
+//        },SPLASH_TIMEOUT);
+
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run()
+//            {
+//                startActivity(new Intent(NewHomeTwo.this,SplashScreen.class));
+//                finish();
+//            }
+//        }, 3000);
+
+
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener2 =
