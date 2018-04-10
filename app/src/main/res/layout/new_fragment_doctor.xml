@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:fontFamily="@font/josefin_sans_bold"
         android:text="FAMILY DOCTOR:"
         android:textColor="#e07a5f"
         android:textStyle="bold"
@@ -24,8 +25,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
+        android:fontFamily="@font/josefin_sans"
         android:text="No Data"
-        android:textSize="26sp"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -35,6 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
+        android:fontFamily="@font/josefin_sans_bold"
         android:text="DOCTOR PHONE NUMBER:"
         android:textColor="#e07a5f"
         android:textStyle="bold"
@@ -47,8 +50,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
+        android:fontFamily="@font/josefin_sans"
         android:text="No Data"
-        android:textSize="26sp"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
@@ -59,6 +63,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="64dp"
         android:background="#e07a5f"
+        android:fontFamily="@font/josefin_sans_bold"
         android:onClick="editDoctor"
         android:text="Edit Data"
         android:textColor="#f4f1de"

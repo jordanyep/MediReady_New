@@ -17,9 +17,10 @@ import java.util.List;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME="family";
-    private static final int DATABASE_VERSION = 8;
+    private static final int DATABASE_VERSION = 10;
     private static final String FAMILY_TABLE = "famreg";
-    private static final String FAM_TABLE = "create table "+FAMILY_TABLE +"(first TEXT,last TEXT primary key,age TEXT,gender TEXT,relationship TEXT,medicalID TEXT,allergies TEXT,medication TEXT,conditions TEXT)";
+    //private static final String FAM_TABLE = "create table "+FAMILY_TABLE +"(first TEXT,last TEXT primary key,age TEXT,gender TEXT,relationship TEXT,medicalID TEXT,allergies TEXT,medication TEXT,conditions TEXT)";
+    private static final String FAM_TABLE = "create table "+FAMILY_TABLE +"(first TEXT primary key,last TEXT,age TEXT,gender TEXT,relationship TEXT,medicalID TEXT,allergies TEXT,medication TEXT,conditions TEXT)";
     //private static final String FAM_TABLE = "create table "+FAMILY_TABLE +"(last TEXT,first TEXT primary key,age TEXT,gender TEXT,relationship TEXT,medicalID TEXT,allergies TEXT,medication TEXT,conditions TEXT,image IMAGE)";
 
     Context context;
